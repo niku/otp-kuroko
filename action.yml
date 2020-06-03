@@ -1,0 +1,17 @@
+name: OTP Kuroko
+description: Provide precompiled release OTP asset
+inputs:
+  secret-token:
+    description: A secret token to authenticate on behalf of GitHub Actions
+    required: true
+  target-pattern:
+    description: A tag pattern to match targets. It is used for command `git tag --list [target-pattern]`
+    default: OTP-*
+    required: false
+  force-update:
+    description: Force update even if release artifact already exists
+    default: "false"
+    required: false
+runs:
+  using: node12
+  main: dist/index.js
